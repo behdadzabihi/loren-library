@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/loren_library_db
+    username: postgres
+    password: behdad2012
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
