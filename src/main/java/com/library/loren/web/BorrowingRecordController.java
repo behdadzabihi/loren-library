@@ -56,6 +56,6 @@ public class BorrowingRecordController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         borrowingRecordService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 }
