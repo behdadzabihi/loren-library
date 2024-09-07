@@ -16,4 +16,5 @@ public class MemberDTO extends BaseEntity {
     private String name;
     private String email;
     private LocalDate membershipDate;
+    private LibraryDTO library;
 }

@@ -15,4 +15,5 @@ public class LibrarianDTO extends BaseEntity {
     private String name;
     private String email;
     private LocalDate hireDate;
+    private LibraryDTO library;
 }

@@ -4,6 +4,7 @@ import com.library.loren.common.exception.NotFoundException;
 import com.library.loren.dao.MemberRepository;
 import com.library.loren.model.Library;
 import com.library.loren.model.Member;
+import com.library.loren.service.LibraryService;
 import com.library.loren.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,13 @@ public class MemberServiceImpl implements MemberService {
 
     private MemberRepository memberRepository;
 
+    private LibraryService libraryService;
+
     @Override
     public Member save(Member member) {
+        Long libraryId = member.getLibrary().getId();
+        Library library = libraryService.findById(libraryId);
+        member.setLibrary(library);
         return memberRepository.save(member);
     }
 
